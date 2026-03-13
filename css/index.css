@@ -1,0 +1,69 @@
+.header {
+  background: var(--green);
+  padding: var(--container-hpadding);
+  justify-content: space-between;
+}
+
+.logo-container{
+  /* gap: 0 1rem; */
+}
+
+.logo-container img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.logo-container h1{
+  font-size: clamp(1rem, 1.66vw, 1.75rem);
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+}
+
+.hamburger-menu-toggle{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #212121;
+}
+
+.nav-list-container{
+  gap: 0 1rem;
+  color: var(--muted-text);
+}
+
+.navbar-button {
+  padding: .545rem 1.6rem;
+  font-size: 1.2rem;
+  background-color: var(--orange);
+  border-radius: var(--btn-radius);
+  transition: background .5ms ease-in-out;
+  color: var(--primary-text);
+}
+
+@media (pointer: fine) and (hover: hover) {
+  .navbar-button:hover {
+    background: var(--orange-darker);
+  }
+}
+
+@media (pointer: coarse) and (hover: none) {
+  .navbar-button:active {
+    background: var(--orange-darker);
+    transform: scale(0.98);
+  }
+}
+
+
+/* =========================================
+              index.css media queries
+============================================*/
+@media (max-width: 600px) {}
+
+
+@media (min-width: 601px) {
+
+  .logo-container img {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+}

@@ -1,25 +1,24 @@
 :root {
   --bg: #f0f0f2;
   --primary-text: #ffffff;
-  --muted-text: rgba(255, 255, 255, 0.5);
+  --muted-text: rgba(255, 255, 255, 0.8);
   --brown: #3b2f2f;
   --orange: #f18f01;
+  --orange-darker: #df8600;
   --skyblue: #3993dd;
   --green: #023618;
   --card: rgba(255, 255, 255, 0.08);
   --border: rgba(255, 255, 255, 0.05);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  --radius: 18px;
-
-  /*=======Tipografía=======*/
-
+  --btn-radius: 100vmax;
+  --container-hpadding: 0 1rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 100%;
 }
 
@@ -28,7 +27,7 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--primary-text);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 a {
@@ -40,9 +39,9 @@ a:hover {
   text-decoration: underline;
 }
 
-.img{
+.img {
   max-width: 100%;
-  height: auto; /* De ser necesario cambiar a 100% */
+  height: auto;
   display: block;
   object-fit: cover;
 }
@@ -51,3 +50,93 @@ a:hover {
   color: var(--muted-text);
 }
 
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: .6rem .9rem;
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+li{
+  list-style: none;
+}
+
+
+/* =========================================
+              Grid base structure
+============================================*/
+.wrapper {
+  display: grid;
+  height: 100vh;
+  /* Para que ocupe toda la pantalla */
+
+  /* Definimos el mapa visual */
+  grid-template-areas:
+    "header  header"
+    "content content"
+    "footer  footer";
+
+  /* Definimos tamaños: Sidebar de 250px y contenido flexible */
+  grid-template-columns: 1fr;
+  /* Header y Footer automáticos, Contenido crece (1fr) */
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Asignamos cada elemento a su área del mapa */
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* =========================================
+              Grid media queries
+============================================*/
+/* Cuando la pantalla es pequeña (Móvil) */
+@media (max-width: 600px) {
+  .wrapper {
+    /* Redibujamos a una sola columna hacia abajo */
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+
+    grid-template-columns: 1fr;
+    /* Todo a una columna */
+  }
+
+  .nav-list-container {
+    display: none;
+  }
+
+  .hamburger-menu-toggle {
+    display: block;
+  }
+}
+
+
+@media (min-width: 601px){
+  .hamburger-menu-toggle{
+    display: none;
+  }
+}
