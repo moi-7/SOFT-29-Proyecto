@@ -1,32 +1,42 @@
-.header {
-  background: var(--green);
-  padding: var(--container-hpadding);
-  justify-content: space-between;
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
 }
 
-.logo-container{
+/*==========================================
+              Header start
+==========================================*/
+.header {
+  background: var(--green);
+  justify-content: space-between;
+  padding: var(--container-hpadding);
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, .2);
+}
+
+.logo-container {
   /* gap: 0 1rem; */
 }
 
-.logo-container img{
+.logo-container img {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.logo-container h1{
+.logo-container h1 {
   font-size: clamp(1rem, 1.66vw, 1.75rem);
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
 }
 
-.hamburger-menu-toggle{
+/* Placeholder */
+.hamburger-menu-toggle {
   width: 2.5rem;
   height: 2.5rem;
   background-color: #212121;
 }
 
-.nav-list-container{
+.nav-list-container {
   gap: 0 1rem;
   color: var(--muted-text);
 }
@@ -34,30 +44,70 @@
 .navbar-button {
   padding: .545rem 1.6rem;
   font-size: 1.2rem;
-  background-color: var(--orange);
-  border-radius: var(--btn-radius);
-  transition: background .5ms ease-in-out;
   color: var(--primary-text);
 }
 
-@media (pointer: fine) and (hover: hover) {
-  .navbar-button:hover {
-    background: var(--orange-darker);
+
+/*==========================================
+Header end
+==========================================*/
+/*==========================================
+Hero start
+==========================================*/
+.content{
+  padding: var(--container-hpadding);
+  background-color: var(--green);
+}
+
+.hero-container{}
+
+.slogan-container {
+  text-align: center;
+}
+
+.slogan-container h1 {
+  font-size: clamp(1.5rem, 1.66vw, 1.625rem);
+}
+
+.hero-cta-container {
+  gap: 1rem 0;
+  flex-direction: column;
+}
+
+.demo-btn, .video-btn{
+  width: 100%;
+  padding: .545rem 4rem;
+  font-size: clamp(1rem, 1.66vw, 1.625rem);
+  text-align: center;
+}
+
+.video-btn{
+  color: #7c7c7c;
+
+  &:hover{
+    color: var(--primary-text);
   }
 }
 
-@media (pointer: coarse) and (hover: none) {
-  .navbar-button:active {
-    background: var(--orange-darker);
-    transform: scale(0.98);
-  }
-}
+/*==========================================
+              Hero end
+==========================================*/
+
+
 
 
 /* =========================================
-              index.css media queries
+           index.css media queries            
 ============================================*/
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+  .hero-image {
+    display: noene;
+  }
+
+  .slogan-container p {
+    display: none;
+  }
+}
 
 
 @media (min-width: 601px) {
@@ -65,5 +115,18 @@
   .logo-container img {
     width: 3.125rem;
     height: 3.125rem;
+  }
+
+  .demo-btn,
+  .video-btn {
+    width: auto;
+    padding: .545rem 1.6rem;
+  }
+
+  @media (min-width: 1200px) {
+
+    .wrapper {
+      margin: 0 auto;
+    }
   }
 }

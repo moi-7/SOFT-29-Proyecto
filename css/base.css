@@ -66,18 +66,32 @@ a:hover {
   z-index: 10;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
 
-li{
+li {
   list-style: none;
+}
+
+.primary-btn {
+  background-color: var(--orange);
+  border-radius: var(--btn-radius);
+  transition: background .5ms ease-in-out;
+  color: var(--primary-text);
+}
+
+.secondary-btn {
+  background-color: var(--bg);
+  border-radius: var(--btn-radius);
+  transition: background .5ms ease-in-out;
+  color: var(--primary-text);
 }
 
 
 /* =========================================
-              Grid base structure
+             Grid base structure
 ============================================*/
 .wrapper {
   display: grid;
@@ -90,7 +104,6 @@ li{
     "content content"
     "footer  footer";
 
-  /* Definimos tamaños: Sidebar de 250px y contenido flexible */
   grid-template-columns: 1fr;
   /* Header y Footer automáticos, Contenido crece (1fr) */
   grid-template-rows: auto 1fr auto;
@@ -110,12 +123,11 @@ li{
 }
 
 /* =========================================
-              Grid media queries
+            media queries
 ============================================*/
-/* Cuando la pantalla es pequeña (Móvil) */
 @media (max-width: 600px) {
   .wrapper {
-    /* Redibujamos a una sola columna hacia abajo */
+    /* Cambiar layout a una columna */
     grid-template-areas:
       "header"
       "content"
@@ -135,8 +147,21 @@ li{
 }
 
 
-@media (min-width: 601px){
-  .hamburger-menu-toggle{
+@media (min-width: 601px) {
+  .hamburger-menu-toggle {
     display: none;
+  }
+}
+
+@media (pointer: fine) and (hover: hover) {
+  .hover:hover {
+    background: var(--orange-darker);
+  }
+}
+
+@media (pointer: coarse) and (hover: none) {
+  .hover:active {
+    background: var(--orange-darker);
+    transform: scale(0.98);
   }
 }
