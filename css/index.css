@@ -1,20 +1,16 @@
-.wrapper {
+.wrapper, .footer{
   width: 100%;
   max-width: 1200px;
+  background-color: var(--green);
 }
 
 /*==========================================
-              Header start
+                  Header
 ==========================================*/
 .header {
   background: var(--green);
   justify-content: space-between;
-  padding: var(--container-hpadding);
   border-bottom: 0.0625rem solid rgba(0, 0, 0, .2);
-}
-
-.logo-container {
-  /* gap: 0 1rem; */
 }
 
 .logo-container img {
@@ -47,19 +43,12 @@
   color: var(--primary-text);
 }
 
-
 /*==========================================
-Header end
-==========================================*/
-/*==========================================
-Hero start
+                  Hero
 ==========================================*/
 .content{
-  padding: var(--container-hpadding);
   background-color: var(--green);
 }
-
-.hero-container{}
 
 .slogan-container {
   text-align: center;
@@ -90,9 +79,13 @@ Hero start
 }
 
 /*==========================================
-              Hero end
+                  footer
 ==========================================*/
-
+.footer{
+  background-color: #212121;
+  color: var(--primary-text);
+  padding: 1.25rem;
+}
 
 
 
@@ -125,7 +118,8 @@ Hero start
 
   @media (min-width: 1200px) {
 
-    .wrapper {
+    .wrapper,
+    .footer {
       margin: 0 auto;
     }
   }

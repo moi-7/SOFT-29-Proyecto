@@ -11,7 +11,6 @@
   --border: rgba(255, 255, 255, 0.05);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   --btn-radius: 100vmax;
-  --container-hpadding: 0 1rem;
 }
 
 * {
@@ -25,9 +24,9 @@ html {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--primary-text);
   line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--primary-text);
 }
 
 a {
@@ -89,27 +88,22 @@ li {
   color: var(--primary-text);
 }
 
-
 /* =========================================
              Grid base structure
 ============================================*/
 .wrapper {
   display: grid;
-  height: 100vh;
-  /* Para que ocupe toda la pantalla */
+  gap: 0 1.25rem;
 
-  /* Definimos el mapa visual */
   grid-template-areas:
-    "header  header"
-    "content content"
-    "footer  footer";
+    ". header ."
+    ". content ."
+    ". footer .";
 
   grid-template-columns: 1fr;
-  /* Header y Footer automáticos, Contenido crece (1fr) */
   grid-template-rows: auto 1fr auto;
 }
 
-/* Asignamos cada elemento a su área del mapa */
 .header {
   grid-area: header;
 }
@@ -127,14 +121,7 @@ li {
 ============================================*/
 @media (max-width: 600px) {
   .wrapper {
-    /* Cambiar layout a una columna */
-    grid-template-areas:
-      "header"
-      "content"
-      "footer";
-
-    grid-template-columns: 1fr;
-    /* Todo a una columna */
+    grid-template-columns: 0.625rem 1fr 0.625rem;
   }
 
   .nav-list-container {
