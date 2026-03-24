@@ -8,7 +8,7 @@
                   Header
 ==========================================*/
 .header {
-  background: var(--green);
+  background: var(--bg);
   justify-content: space-between;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, .2);
 }
@@ -25,11 +25,14 @@
   font-weight: normal;
 }
 
-/* Placeholder */
+/* SVG Hamburger menu styles */
 .hamburger-menu-toggle {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #212121;
+  width: 2rem;
+  height: 2rem;
+
+  & svg {
+    fill: 212121;
+  }
 }
 
 .nav-list-container {
@@ -46,6 +49,10 @@
 /*==========================================
                   Hero
 ==========================================*/
+.hero-container{
+  background-color: var(--bg);
+}
+
 .content{
   background-color: var(--green);
 }
