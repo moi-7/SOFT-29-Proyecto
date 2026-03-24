@@ -1,6 +1,7 @@
 :root {
   --bg: #f0f0f2;
   --primary-text: #ffffff;
+  --primary-text-dark: #212121;
   --muted-text: rgba(255, 255, 255, 0.8);
   --brown: #3b2f2f;
   --orange: #f18f01;
@@ -146,11 +147,13 @@ li {
 @media (max-width: 600px) {
   .wrapper {
     grid-template-areas:
-      ". header ."
-      ". content ."
-      ". footer .";
+      "header"
+      "content"
+      "footer";
 
-    grid-template-columns: 0.625rem 1fr 0.625rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      padding: 0 1.25rem;
   }
 
   .nav-list-container {

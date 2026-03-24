@@ -1,7 +1,6 @@
 .wrapper, .footer{
   width: 100%;
   max-width: 1200px;
-  background-color: var(--green);
 }
 
 /*==========================================
@@ -11,6 +10,7 @@
   background: var(--bg);
   justify-content: space-between;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, .2);
+  anchor-name: --header;
 }
 
 .logo-container img {
@@ -30,30 +30,27 @@
   width: 2rem;
   height: 2rem;
 
-  & svg {
-    fill: 212121;
+  & svg path{
+    fill: rgb(0 0 0 / 60%);
+    stroke-width: 10;
   }
-}
 
-#menu_hamburguesa_interruptor:checked~.nav-list-container {
-  display: block;
-  position: absolute;
-  top: 6rem;
-  right: 0;
-  max-width: fit-content;
-  background-color: oklab(95.514% 0 -0.00011);
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-  border-radius: .4rem;
-  z-index: 9999;
+  & .hamburger-icon {
+    display: block;
+  }
+
+  & .close-icon {
+    display: none;
+  }
 }
 
 .nav-list-container {
   gap: 0 1rem;
-  color: var(--muted-text);
+  margin: 0;
+}
+
+.nav-list-container li{
+  color: var(--primary-text-dark);
 }
 
 .navbar-button {
@@ -70,7 +67,7 @@
 }
 
 .content{
-  background-color: var(--green);
+  background-color: var(--bg);
 }
 
 .slogan-container {
@@ -122,6 +119,43 @@
 
   .slogan-container p {
     display: none;
+  }
+
+  .navbar-button {
+    width: 80%;
+    margin-inline: auto;
+    text-align: center;
+    row-gap: 2rem;
+
+    & a {
+      color: var(--primary-text);
+    }
+  }
+
+  #menu_hamburguesa_interruptor:checked~.nav-list-container {
+    min-width: 100vw;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.2rem 9999rem;
+    position: absolute;
+    position-anchor: --header;
+    position-area: bottom center;
+    position-visibility: always;
+    background-color: color-mix(in srgb, var(--bg) 95%, transparent 5%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    z-index: 9999;
+  }
+
+  #menu_hamburguesa_interruptor:checked~.hamburger-menu-toggle {
+    & .hamburger-icon {
+      display: none;
+    }
+
+    & .close-icon {
+      display: block;
+    }
   }
 }
 
