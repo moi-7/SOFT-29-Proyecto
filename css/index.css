@@ -25,7 +25,7 @@
   font-weight: normal;
 }
 
-/* SVG Hamburger menu styles */
+/* Estilos Menu Hamburguesa - SVG */
 .hamburger-menu-toggle {
   width: 2rem;
   height: 2rem;
@@ -33,6 +33,22 @@
   & svg {
     fill: 212121;
   }
+}
+
+#menu_hamburguesa_interruptor:checked~.nav-list-container {
+  display: block;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  max-width: fit-content;
+  background-color: oklab(95.514% 0 -0.00011);
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  border-radius: .4rem;
+  z-index: 9999;
 }
 
 .nav-list-container {
