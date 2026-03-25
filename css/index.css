@@ -125,7 +125,6 @@
     width: 80%;
     margin-inline: auto;
     text-align: center;
-    row-gap: 2rem;
 
     & a {
       color: var(--primary-text);
