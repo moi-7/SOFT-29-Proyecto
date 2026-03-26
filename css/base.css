@@ -57,6 +57,7 @@ body {
 
 h1{
   font-family: var(--font-family-headings);
+  font-size: clamp(1.5rem, 0.4348vw + 1.369565rem, 1.750000rem);
 }
 
 a {
