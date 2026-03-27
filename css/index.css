@@ -1,11 +1,16 @@
 .wrapper, .footer{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 /*==========================================
                   Header
 ==========================================*/
+main, header{
+  padding-inline: 1.25rem;
+}
+
+
 .header {
   background: var(--bg);
   justify-content: space-between;
@@ -78,32 +83,20 @@
 .hero-container{
   background-color: var(--bg);
   border-bottom: 0.0625rem solid rgba(0, 0, 0, .1);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  column-gap: 2rem;
+  align-items: stretch;
+  margin-block-start: 2rem;
 }
 
-.content{
-  background-color: var(--bg);
+.chip p {
+  margin: 0;
+  color: var(--primary-text-dark);
 }
 
-.chip{
-  display: inline-flex;
-  justify-content: center;
-  margin: 2rem 0;
-  column-gap: 0.625rem;
-  background-color: #d8d8d8;
-  background-image: linear-gradient(to right, #dadada, #d8d8d8);
-  border-radius: var(--btn-radius);
-  padding: 5px 10px;
-  font-size: 12px;
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  border: 1px solid rgba(0, 0, 0, .1);
-
-  & p{
-    margin: 0;
-    color: var(--primary-text-dark);
-  }
-}
-
-.circle{
+.chip .circle{
   width: 8px;
   height: 8px;
   background-color: var(--orange);
@@ -114,7 +107,6 @@
   text-align: center;
 }
 
-.slogan-container h1 {}
 
 .hero-cta-container {
   gap: 1rem 0;
@@ -122,7 +114,6 @@
 }
 
 .demo-btn, .video-btn{
-  width: 100%;
   padding: .545rem 4rem;
   font-size: clamp(1rem, 1.66vw, 1.625rem);
   text-align: center;
@@ -136,7 +127,10 @@
   }
 }
 
-.problema-heading{}
+.hero-img {
+  align-self: end;
+}
+
 
 /*==========================================
                   footer
@@ -153,8 +147,25 @@
            index.css media queries            
 ============================================*/
 @media (max-width: 600px) {
-  .hero-image {
+  .hero-img {
     display: none;
+  }
+
+  .demo-btn,
+  .video-btn {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 675px) {
+
+  .nav-list-container {
+    display: none;
+  }
+
+  .hamburger-menu-toggle {
+    display: block;
   }
 
   .navbar-button {
@@ -179,8 +190,8 @@
     position-anchor: --header;
     position-area: bottom center;
     position-visibility: always;
-    background-color: var(--bg); /* fallback */
-    background-color: color-mix(in display-p3, var(--bg) 95%, transparent 5%);
+    background-color: var(--bg);
+    background-color: color-mix(in display-p3, var(--bg) 98%, transparent 2%);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     z-index: 9999;
   }
@@ -197,24 +208,25 @@
 }
 
 
-@media (min-width: 601px) {
+@media (min-width: 676px) {
+  .hamburger-menu-toggle {
+    display: none;
+  }
+}
 
+
+@media (min-width: 601px) {
   .logo-container img {
     width: 3.125rem;
     height: 3.125rem;
   }
+}
 
-  .demo-btn,
-  .video-btn {
-    width: auto;
-    padding: .545rem 1.6rem;
-  }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1601px) {
 
     .wrapper,
     .footer {
       margin: 0 auto;
     }
   }
-}
