@@ -9,7 +9,7 @@
   --skyblue: #3993dd;
   --green: #023618;
   --card: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.05);
+  --border: rgb(0 0 0 / 10%);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   --btn-radius: 100vmax;
   --font-family-headings: 'Plus Jakarta Sans', sans-serif, system-ui;
@@ -117,19 +117,6 @@ li {
   border-radius: var(--btn-radius);
   transition: background .5ms ease-in-out;
   color: var(--primary-text);
-}
-
-.chip {
-  padding: 0.3125rem 0.625rem;
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.625rem;
-  background-color: #d8d8d8;
-  background-image: linear-gradient(to right, #dadada, #d8d8d8);
-  font-size: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, .1);
-  border-radius: var(--btn-radius);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
 }
 
 /* =========================================
