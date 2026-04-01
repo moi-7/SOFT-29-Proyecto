@@ -7,7 +7,7 @@
                   Header
 ==========================================*/
 main, header{
-  padding-inline: 1.25rem;
+  padding-inline: 5%;
 }
 
 
@@ -86,7 +86,7 @@ main, header{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   column-gap: 2rem;
-  margin-block-start: 4rem;
+  margin-block-start: 2rem;
 }
 
 .chip p{
@@ -184,7 +184,7 @@ main, header{
 .footer{
   background-color: #212121;
   color: var(--primary-text);
-  padding: 1.25rem;
+  padding-inline: 5%;
 }
 
 
@@ -204,7 +204,7 @@ main, header{
 }
 
 
-@media (max-width: 675px) {
+@media (max-width: 690px) {
 
   .nav-list-container {
     display: none;
@@ -254,7 +254,7 @@ main, header{
 }
 
 
-@media (min-width: 676px) {
+@media (min-width: 691px) {
   .hamburger-menu-toggle {
     display: none;
   }
