@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="Assets/icon.png">
+  <link rel="icon" type="image/png" href="Assets/icons/logo.png">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
   <!-- Fallback de fuentes externas a Google Fonts  CDN's-->
@@ -25,10 +25,10 @@
   <div class="wrapper">
     <header class="header flex">
 
-      <div class="logo-container flex">
+      <a class="logo-container flex" href="index.html" style="text-decoration: none;">
         <img src="Assets/icons/logo.png" alt="EcoTrace Logotipo">
         <h1>EcoTrace</h1>
-      </div>
+      </a>
 
       
       <nav class="site-nav-container flex" aria-label="Menú principal">
@@ -48,7 +48,7 @@
           <li><a href="#solucion">Solución</a></li>
           <li><a href="#tecnologia">Tecnología</a></li>
           <li><a href="#impacto">Impacto</a></li>
-          <li class="navbar-button primary-btn"><a href="#contactar">Contactar</a></li>
+          <li class="navbar-button primary-btn"><a href="#contacto">Contactar</a></li>
         </ul>
       </nav>
     </header>
@@ -304,7 +304,39 @@
           </div>
         </article>
       </section>
-      <section id="Impacto">
+            <section id="tecnologia">
+        <article>
+          <h1>Tres pilares de ciencia aplicada</h1>
+          <div class="card-container">
+            <!-- <img src="" alt=""> -->
+            <span>Biotecnología de semillas</span>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita excepturi maiores perferendis
+              tempore
+              distinctio explicabo amet aperiam nesciunt natus in sequi eaque impedit quaerat, repudiandae consequuntur
+              ducimus
+              tenetur at</P>
+          </div>
+          <div class="card-container">
+            <!-- <img src="" alt=""> -->
+            <span>autonomía</span>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita excepturi maiores perferendis
+              tempore
+              distinctio explicabo amet aperiam nesciunt natus in sequi eaque impedit quaerat, repudiandae consequuntur
+              ducimus
+              tenetur at</P>
+          </div>
+          <div class="card-container">
+            <!-- <img src="" alt=""> -->
+            <span>Monitoreo y verificación</span>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita excepturi maiores perferendis
+              tempore
+              distinctio explicabo amet aperiam nesciunt natus in sequi eaque impedit quaerat, repudiandae consequuntur
+              ducimus
+              tenetur at</P>
+          </div>
+        </article>
+      </section>
+      <section id="impacto">
         <article>
           <h1>Impacto medido, verificado y escalable</h1>
           <div class="card-container">
@@ -336,7 +368,7 @@
 
         </article>
       </section>
-      <section>
+      <section id="contacto">
         <article>
           <!-- <img src="" alt=""> -->
           <h1>Reconstruyamos los Bosques desde la ciencia</h1>
@@ -356,7 +388,14 @@
       </section>
     </main>
   </div>
-
+  <a class="floating-drone" href="#contacto">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="drone">
+      <path opacity=".4" fill="red"
+        d="M0 168C0 181.3 10.7 192 24 192L264 192C277.3 192 288 181.3 288 168C288 154.7 277.3 144 264 144L24 144C10.7 144 0 154.7 0 168zM352 168C352 181.3 362.7 192 376 192L616 192C629.3 192 640 181.3 640 168C640 154.7 629.3 144 616 144L376 144C362.7 144 352 154.7 352 168z" />
+      <path fill="#3993dd"
+        d="M120 304L120 192L168 192L168 256L472 256L472 192L520 192L520 304C520 312.3 515.7 320 508.7 324.4L473 346.7L493.8 379.9C505.7 399 512 421 512 443.5L512 488C512 501.3 501.3 512 488 512C474.7 512 464 501.3 464 488L464 443.5C464 430 460.2 416.8 453.1 405.3L432.3 372.1L380.7 404.3C376.9 406.7 372.5 407.9 368 407.9L272 407.9C267.5 407.9 263.1 406.6 259.3 404.3L207.7 372.1L186.9 405.3C179.8 416.8 176 430 176 443.5L176 488C176 501.3 165.3 512 152 512C138.7 512 128 501.3 128 488L128 443.5C128 421 134.3 399 146.2 379.9L167 346.7L131.3 324.4C124.3 320 120 312.3 120 304z" />
+    </a>
+  </div>
   <footer class="footer">
     <img src="Assets/icons/logo.png" alt="EcoTrace Logotipo">
     <h1>EcoTrace</h1>

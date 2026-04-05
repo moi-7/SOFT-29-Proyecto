@@ -1,4 +1,6 @@
 /*==========================================
+        Cerrar menu de navegación
+==========================================*/
 document.addEventListener('DOMContentLoaded', () => {
   const menuCheckbox = document.getElementById('menu_hamburguesa_interruptor');
   const navLinks = document.querySelectorAll('.nav-list-container a');
@@ -19,4 +21,3 @@ document.addEventListener('DOMContentLoaded', () => {
     menuCheckbox.checked = false;
   });
 });
-==========================================*/
