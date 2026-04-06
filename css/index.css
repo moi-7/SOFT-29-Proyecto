@@ -203,6 +203,37 @@ main, header{
 }
 
 /*==========================================
+          Sección Problema
+==========================================*/
+.problema-container {
+  /* outline: 1px solid seagreen; */
+  column-gap: 0.625rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+
+.card-container{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-icon-container{
+ display: inline-block;
+ background-color: #d8d8d8;
+ padding: 0.625rem;
+ border-radius: 10px;
+}
+
+.card-icon-container svg{
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+
+
+
+/*==========================================
                   footer
 ==========================================*/
 .footer{
@@ -217,7 +248,7 @@ main, header{
            index.css media queries            
 ============================================*/
 @media (max-width: 600px) {
-  .hero-img {
+  .hero-img, .floating-drone {
     display: none;
   }
 
