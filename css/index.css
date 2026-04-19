@@ -15,10 +15,11 @@ main, header{
   background: var(--bg);
   justify-content: space-between;
   anchor-name: --header;
-  padding-top: 0.625rem;
+  padding-block: 0.625rem;
   position: sticky;
   top: 0;
   z-index: 9999;
+  transition: background-color 200ms ease;
 }
 
 .logo-container {
@@ -42,7 +43,7 @@ main, header{
   width: 2rem;
   height: 2rem;
 
-  & svg path{
+  & svg{
     fill: rgb(0 0 0 / 60%);
     stroke-width: 10;
   }
@@ -59,6 +60,7 @@ main, header{
 .nav-list-container {
   gap: 0 1rem;
   margin: 0;
+  background-color: inherit;
 }
 
 .nav-list-container li{
@@ -280,19 +282,17 @@ main, header{
   }
 
   #menu_hamburguesa_interruptor:checked~.nav-list-container {
-    min-width: 100vw;
+    width: 100vw;
     min-height: 50vh;
     padding: 1rem 1.25rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 1.2rem 9999rem;
+    row-gap: 1.2rem;
     position: fixed;
     position-anchor: --header;
     position-area: bottom center;
     position-visibility: always;
-    background-color: var(--bg);
-    background-color: color-mix(in display-p3, var(--bg) 98%, transparent 2%);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     z-index: 9999;
   }
@@ -335,3 +335,21 @@ main, header{
       margin: 0 auto;
     }
   }
+
+
+/*==========================================
+   Scroll Color Change - Header Styling
+==========================================*/
+.header.color-change {
+  background-color: var(--green);
+}
+
+.site-nav-container {
+  background-color: inherit;
+  transition: background-color 200ms ease;
+}
+
+.header.color-change .hamburger-menu-toggle svg{
+  fill: rgb(255 255 255 / 80%);
+}
+
