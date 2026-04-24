@@ -1,0 +1,14 @@
+# Ignore python files
+*.py
+
+# Ignore toml files
+*.toml
+
+# Ignore md files
+*.md
+
+# Ignore uv.lock files
+*.lock
+
+# Ignore .python-version
+.python-version
