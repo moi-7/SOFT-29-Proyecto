@@ -29,25 +29,35 @@ document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector('.header');
 
 if (header) {
+  // Constantes
+  const SCROLL_THRESHOLD = 200;
+  const SCROLLED_TEXT_COLOR = '#ffffff';
+  const DEFAULT_TEXT_COLOR = '';
+
   const h1Element = header.querySelector('h1');
   const navLinks = header.querySelectorAll('.nav-list-container a');
-  
-  const scrollThreshold = 200;
-  let hasScrolledPast = false;
+
+  let wasScrolledPast = false;
+
+  // Función auxiliar para actualizar colores
+  const updateHeaderColors = (textColor) => {
+    h1Element.style.color = textColor;
+    navLinks.forEach(link => link.style.color = textColor);
+  };
 
   window.addEventListener('scroll', () => {
-    const isScrolledPast = window.scrollY > scrollThreshold;
+    const isScrolledPast = window.scrollY > SCROLL_THRESHOLD;
 
-    if (isScrolledPast && !hasScrolledPast) {
-      header.classList.add('color-change');
-      if (h1Element) h1Element.style.color = '#ffffff';
-      navLinks.forEach(link => link.style.color = '#ffffff');
-      hasScrolledPast = true;
-    } else if (!isScrolledPast && hasScrolledPast) {
-      header.classList.remove('color-change');
-      if (h1Element) h1Element.style.color = '';
-      navLinks.forEach(link => link.style.color = '');
-      hasScrolledPast = false;
+    // Cambia los colores solo si hay un cambio de estado del scroll
+    if (isScrolledPast !== wasScrolledPast) {
+      if (isScrolledPast) {
+        header.classList.add('color-change');
+        updateHeaderColors(SCROLLED_TEXT_COLOR);
+      } else {
+        header.classList.remove('color-change');
+        updateHeaderColors(DEFAULT_TEXT_COLOR);
+      }
+      wasScrolledPast = isScrolledPast;
     }
   });
 }

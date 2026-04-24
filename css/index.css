@@ -14,7 +14,6 @@ footer {
                   Header
 ==========================================*/
 .header {
-  /* background-image: var(--bg); */
   justify-content: space-between;
   anchor-name: --header;
   padding-block: 0.625rem;
@@ -22,6 +21,7 @@ footer {
   top: 0;
   z-index: 9999;
   transition: background-color 200ms ease;
+  background-color: var(--bg);
 }
 
 .logo-container {
@@ -72,6 +72,7 @@ footer {
   font-size: var(--base);
 }
 
+
 /*==========================================
  Clases auxiliares - Navbar cambio de color
 ==========================================*/
@@ -81,7 +82,10 @@ footer {
 
 .site-nav-container {
   background-color: inherit;
-  transition: background-color 200ms ease;
+}
+
+.nav-list-container {
+  background-color: inherit;
 }
 
 .header.color-change .hamburger-menu-toggle svg{
@@ -97,7 +101,7 @@ footer {
   grid-template-rows: auto;
   column-gap: 1rem;
   margin-block-start: 2rem;
-  height: 100vh;
+  outline: 1px solid red;
 }
 
 .chip p{
@@ -272,7 +276,7 @@ footer {
 /* =========================================
            index.css media queries            
 ============================================*/
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 
   .hero-img,
   .floating-drone {
@@ -307,6 +311,12 @@ footer {
       text-align: center;
     }
   }
+
+.hero-cta-container {
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: stretch;
+}
 
   #menu_hamburguesa_interruptor:checked~.nav-list-container {
     width: 100vw;
@@ -366,6 +376,12 @@ footer {
     max-width: 80ch;
   }
 
+  .hero-cta-container {
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: center;
+  }
+
   .chip-bottom-container {
     justify-content: center;
   }
@@ -383,6 +399,7 @@ footer {
   .hero-cta-container {
     flex-direction: row;
     column-gap: 1rem;
+    justify-content: start;
   }
 }
 
@@ -393,5 +410,170 @@ footer {
   .footer {
     margin: 0 auto;
   }
+} */
+
+/* =========================================
+    index.css media queries - Mobile First     
+============================================*/
+
+/* BASE STYLES (Mobile: 0px+) */
+.hero-img,
+.floating-drone {
+  display: none;
 }
 
+.demo-btn,
+.video-btn {
+  width: 80%;
+}
+
+.nav-list-container {
+  display: none;
+}
+
+.hamburger-menu-toggle {
+  display: block;
+}
+
+.navbar-button {
+  width: 80%;
+  margin: 0 auto;
+
+  & a {
+    display: inline-block;
+    color: var(--primary-text);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.hero-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  row-gap: 1rem;
+}
+
+.slogan-container h1 {
+  text-wrap: balance;
+  max-width: 80ch;
+}
+
+.hero-cta-container {
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: stretch;
+}
+
+.chip-bottom-container {
+  justify-content: center;
+}
+
+#menu_hamburguesa_interruptor:checked~.nav-list-container {
+  width: 100vw;
+  height: auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  position: fixed;
+  position-anchor: --header;
+  position-area: bottom center;
+  position-visibility: always;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  z-index: 9999;
+}
+
+#menu_hamburguesa_interruptor:checked~.hamburger-menu-toggle {
+  & .hamburger-icon {
+    display: none;
+  }
+
+  & .close-icon {
+    display: block;
+  }
+}
+
+/* TABLET: 601px+ */
+@media (min-width: 601px) {
+  .logo-container img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .chip-bottom-container {
+    justify-content: flex-start;
+  }
+
+  .demo-btn,
+  .video-btn {
+    width: auto;
+  }
+}
+
+/* DESKTOP MENU: 691px+ */
+@media (min-width: 691px) {
+  .nav-list-container {
+    display: flex;
+    gap: 0 1rem;
+    margin: 0;
+    background-color: inherit;
+  }
+
+  .hamburger-menu-toggle {
+    display: none;
+  }
+
+  .navbar-button {
+    width: auto;
+    margin: 0;
+
+    & a {
+      display: inline-block;
+      color: var(--primary-text);
+      width: auto;
+      text-align: center;
+    }
+  }
+}
+
+/* DESKTOP LAYOUT: 1025px+ */
+@media (min-width: 1025px) {
+  .hero-img,
+  .floating-drone {
+    display: block;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 0;
+  }
+
+  .slogan-container {
+    text-align: left;
+  }
+
+  .slogan-container h1 {
+    padding-inline: 0;
+  }
+
+  .hero-cta-container {
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: start;
+    row-gap: 0;
+  }
+
+  .chip-bottom-container {
+    justify-content: flex-start;
+  }
+}
+
+/* LARGE SCREENS: 1601px+ */
+@media (min-width: 1601px) {
+  .wrapper,
+  .footer {
+    margin: 0 auto;
+  }
+}
