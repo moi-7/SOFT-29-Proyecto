@@ -66,7 +66,11 @@ body {
   color: var(--primary-text-dark);
   font-family: var(--font-family-text);
   line-height: 1.5;
-  background-image: linear-gradient(to bottom in oklch, var(--bg) 30%, var(--green) 700%);
+  /* background-image: linear-gradient(to bottom in oklch, var(--bg) 30%, var(--green) 700%); */
+}
+
+.wrapper {
+  background-image: linear-gradient(to bottom in oklch, var(--bg) 15%, var(--green) 100%);
 }
 
 h1{
@@ -177,8 +181,6 @@ li {
 /* =========================================
             media queries
 ============================================*/
-@media (max-width: 600px) {}
-
 @media (pointer: fine) and (hover: hover) {
   .btn{
     cursor: pointer;
