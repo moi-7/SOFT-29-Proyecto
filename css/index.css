@@ -20,8 +20,8 @@ footer {
   position: sticky;
   top: 0;
   z-index: 9999;
-  transition: background-color 200ms ease;
-  background-color: var(--bg);
+  /* transition: background-color 200ms ease; */
+  background-color: rgb(240 240 242 / 80%);
 }
 
 .logo-container {
@@ -29,8 +29,8 @@ footer {
 }
 
 .logo-container img {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .logo-container h1 {
@@ -79,18 +79,25 @@ footer {
 }
 
 /*==========================================
- Clases auxiliares - Navbar cambio de color
+ Clase auxiliar - Navbar cambio de color
 ==========================================*/
-.header.color-change {
+.header.blur{
+  /* backdrop-filter: blur(20px); */
+}
+
+.header.color-change{
   background-color: var(--green);
 }
 
 .site-nav-container {
+  /* backdrop-filter: blur(20px); */
   background-color: inherit;
 }
 
 .nav-list-container {
+  backdrop-filter: blur(20px);
   background-color: inherit;
+
 }
 
 .header.color-change .hamburger-menu-toggle svg{
@@ -107,28 +114,41 @@ footer {
   margin-block-start: 2rem;
 }
 
+.chip {
+  padding: 0.3125rem 0.625rem;
+  align-items: center;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: var(--btn-radius);
 
-.chip p{
-  margin: 0;
-  font-size: var(--xsm);
+  & p {
+    margin: 0;
+    font-size: var(--xsm);
+  }
 }
 
 .chip-top {
   color: var(--primary-text-dark);
+  display: inline-flex;
+  column-gap: 0.625rem;
+  /* background-color: #d8d8d8; */
+  background-image: linear-gradient(to right, rgb(218 218 218 / 80%), rgb(216 216 216 /50%));
+  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
 }
+
 
 .circle{
   width: 8px;
   height: 8px;
   background-color: var(--orange);
   border-radius: 50%;
+  animation: colorfade 3s ease infinite;
+  contain: paint;
 }
 
 .slogan-container {
   padding: 2rem 1.5rem;
   text-align: center;
 }
-
 
 .hero-heading {
   font-size: var(--slogan);
@@ -161,33 +181,34 @@ footer {
   justify-content: center;
 }
 
-.demo-btn,
-.video-btn {
-  padding: .545rem 4rem;
+:where(.explorar-btn, .video-btn) {
+  padding: 0.75rem 2.5rem;
   width: 90%;
-}
-
-
-.hero-img-container,
-.floating-drone {
-  display: none;
-}
-
-.chip {
-  padding: 0.3125rem 0.625rem;
-  align-items: center;
-  border: 1px solid rgb(0 0 0 / 10%);
-  border-radius: var(--btn-radius);
-  font-size: clamp(0.625rem, 0.434783vw + 0.994565rem, 0.75rem);
-
-}
-
-.chip-top {
-  display: inline-flex;
+  justify-content: center;
   column-gap: 0.625rem;
-  background-color: #d8d8d8;
-  background-image: linear-gradient(to right, #dadada, #d8d8d8);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: rgb(255 255 255 / 80%);
+    transition: transform 200ms ease;
+    flex-shrink: 0;
+  }
+
+  &:hover svg {
+    transform: translateX(0.3125rem);
+  }
+}
+
+.video-btn svg {
+  fill: transparent;
+  stroke: rgb(0 0 0 / 80%);
+  stroke-width: 2rem;
+}
+
+.video-btn:hover svg {
+  transform: none;
+  stroke: rgb(255 255 255  / 80%);
 }
 
 .chip-bottom-container {
@@ -220,28 +241,9 @@ footer {
   height: 15px;
 }
 
+.hero-img-container,
 .floating-drone {
-  position: fixed;
-  right: 5%;
-  bottom: 5%;
-  animation: float 3s ease-in-out infinite;
-}
-
-.floating-drone svg{
-    width: 50px;
-    height: 50px;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  display: none;
 }
 
 /*==========================================
@@ -272,7 +274,6 @@ footer {
   height: 1.875rem;
 }
 
-
 /*==========================================
                   footer
 ==========================================*/
@@ -281,13 +282,62 @@ footer {
   color: var(--primary-text);
 }
 
+.floating-drone {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-drone svg{
+    width: 50px;
+    height: 50px;
+}
 
 /* =========================================
     index.css media queries - Mobile First     
 ============================================*/
-@media (max-width: 690px) {
+/* @media (max-width: 690px) { */
 
+  /* #menu_hamburguesa_interruptor:checked~.nav-list-container { */
+    /* width: 100%; */
+    /* height: auto; */
+    /* padding: 2rem 1.25rem; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* row-gap: 1.2rem; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* position-anchor: --header;
+    position-area: bottom center;
+    position-visibility: always; */
+    /* box-shadow: 0 2px 5px rgb(0 0 0 / 80%); */
+    /* z-index: 9999; */
+  /* } */
+
+  /* #menu_hamburguesa_interruptor:checked~.hamburger-menu-toggle { */
+    /* & .hamburger-icon { */
+      /* display: none; */
+    /* } */
+
+    /* & .close-icon { */
+      /* display: block; */
+    /* } */
+  /* } */
+/* } */
+
+
+/* KEEP ONLY THIS ONE: */
+@media (max-width: 690px) {
+  /* Primary: Modern browsers with anchor positioning support */
   #menu_hamburguesa_interruptor:checked~.nav-list-container {
+    position: fixed;
+    position-anchor: --header; /* <--- CRITICAL FIX: The missing anchor link! */
+    top: anchor(--header bottom); /* Adding explicit anchor name inside anchor() for max compatibility */
+    left: 0;
+    right: 0;
     width: 100vw;
     height: auto;
     padding: 2rem 1.25rem;
@@ -295,12 +345,19 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     row-gap: 1.2rem;
-    position: fixed;
-    position-anchor: --header;
-    position-area: bottom center;
-    position-visibility: always;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-    z-index: 9999;
+    z-index: 9998;
+  }
+
+  /* Fallback: Older browsers without anchor positioning */
+  @supports not (top: anchor(--header bottom)) {
+    #menu_hamburguesa_interruptor:checked~.nav-list-container {
+      position: fixed;
+      top: 52px;
+      left: 0;
+      right: 0;
+      width: 100vw;
+    }
   }
 
   #menu_hamburguesa_interruptor:checked~.hamburger-menu-toggle {
@@ -314,16 +371,13 @@ footer {
   }
 }
 
-
 @media (min-width: 600px) {
-  .logo-container img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
 
-  .demo-btn,
+  .explorar-btn,
   .video-btn {
     width: auto;
+    width: 190px;
+    height: 50px;
   }
 
   .hero-cta-container {
@@ -403,3 +457,32 @@ footer {
   margin-block-start: 5rem;
 }
 
+/*==========================================
+              Keyframes
+==========================================*/
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@keyframes colorfade {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
