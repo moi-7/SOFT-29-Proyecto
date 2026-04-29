@@ -5,7 +5,7 @@
 }
 
 header,
-main,
+section,
 footer {
   padding-inline: 5%;
 }
@@ -15,7 +15,7 @@ footer {
 ==========================================*/
 .header {
   justify-content: space-between;
-  padding-block: 0.625rem;
+  padding-block: 0.9375rem;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -243,7 +243,8 @@ footer {
           Sección Problema
 ==========================================*/
 .problema-container {
-  outline: 1px solid seagreen;
+  outline: 1px solid #fff;
+  background-color: var(--green);
   column-gap: 0.625rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -360,6 +361,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 2rem;
+    height: 100vh;
   }
 
   .slogan-container {
@@ -380,7 +382,8 @@ footer {
   }
 
   .hero-img-container {
-    align-self:  center;
+    align-self: start;
+    padding-block-start: 3rem;
   }
 
   .hero-img-container,
@@ -397,11 +400,6 @@ footer {
   }
 }
 
-
-#problema{
-  background-color: paleturquoise;
-  margin-block-start: 5rem;
-}
 
 /*==========================================
               Keyframes
