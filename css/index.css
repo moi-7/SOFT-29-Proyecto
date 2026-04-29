@@ -4,10 +4,10 @@
   max-width: 1600px;
 }
 
-header,
-section,
-footer {
-  padding-inline: 5%;
+:where(header,
+  section,
+  footer) {
+  padding-inline: 4rem;
 }
 
 /*==========================================
@@ -103,8 +103,9 @@ footer {
 .hero-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
   margin-block-start: 2rem;
+  padding-inline: 0;
 }
 
 .chip {
@@ -152,6 +153,11 @@ footer {
   margin-block: 1rem;
 }
 
+.hero-text {
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
 .hero-keyword {
   position: relative;
   display: inline-block;
@@ -193,6 +199,7 @@ footer {
   }
 }
 
+/* sobreescribiendo estilos de arriba solo para .video-btn */
 .video-btn svg {
   fill: transparent;
   stroke: rgb(0 0 0 / 80%);
@@ -239,6 +246,18 @@ footer {
   display: none;
 }
 
+.waves {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  padding-block-start: 2rem;
+  display: flex;
+  
+  & svg{
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
 /*==========================================
           Sección Problema
 ==========================================*/
@@ -274,7 +293,6 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
-  grid-auto-flow: row;
   row-gap: 1rem;
   position: relative;
   z-index: 2;
@@ -282,11 +300,11 @@ footer {
 
 .card-container{
   display: grid;
-  row-gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: subgrid;
   grid-row: span 5;
   justify-content: start;
+  row-gap: 1rem;
   padding: 1rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -324,6 +342,7 @@ footer {
   right: 5%;
   bottom: 5%;
   animation: float 3s ease-in-out infinite;
+  contain: paint;
 }
 
 .floating-drone svg{
@@ -378,6 +397,14 @@ footer {
 
 
 @media (min-width: 691px) {
+ .hero-container {
+    height: auto;
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 2rem;
+  }
+
   .nav-list-container {
     display: flex;
     align-items: center;
@@ -393,7 +420,7 @@ footer {
 
   .hero-text {
     text-wrap: balance;
-    max-width: 80ch;
+    max-width: 73ch;
     margin-inline: auto;
   }
   .cards-wrapper{
@@ -405,15 +432,14 @@ footer {
 
 @media (min-width: 1024px) {
   .hero-container {
-    height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto;
     column-gap: 2rem;
   }
 
   .slogan-container {
     text-align: left;
-    padding: 0;
+    padding-inline-start: 4rem;
   }
 
   .hero-text {
@@ -429,8 +455,8 @@ footer {
   }
 
   .hero-img-container {
-    align-self: start;
-    padding-block-start: 3rem;
+    align-self: center;
+    padding-inline-end: 4rem;
   }
 
   .hero-img-container,
@@ -438,12 +464,13 @@ footer {
     display: block;
   }
 
-  .cards-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(320px 4fr));
-  }
-
   .card-container{
    padding-inline: 2rem;
+  }
+
+  .waves{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
   }
 }
 
