@@ -7,7 +7,7 @@
 :where(header,
   section,
   footer) {
-  padding-inline: 4rem;
+  padding-inline: var(--hpadding);
 }
 
 /*==========================================
@@ -15,7 +15,7 @@
 ==========================================*/
 .header {
   justify-content: space-between;
-  padding-block: 0.9375rem;
+  padding-block: 1rem;
   position: sticky;
   top: 0;
   z-index: 997;
@@ -109,7 +109,7 @@
 }
 
 .chip {
-  padding: 0.3125rem 0.625rem;
+  padding: 0.3125rem 0.9375rem;
   align-items: center;
   border: 1px solid rgb(0 0 0 / 10%);
   border-radius: var(--btn-radius);
@@ -139,7 +139,8 @@
 }
 
 .slogan-container {
-  padding: 2rem 1.5rem;
+  padding-block: 2rem;
+  padding-inline: 0;
   text-align: center;
 }
 
@@ -263,14 +264,12 @@
 ==========================================*/
 .problema-container {
   max-width: 100%;
-  padding-block: 8rem;
+  padding-block: 6rem;
   background-color: var(--green);
   background-image: url("../Assets/images/forest.avif");
   background-size: cover;
   background-position: center;
-  background-blend-mode: hard-light;
   position: relative;
-  color: white;
 }
 
 .problema-container::after {
@@ -280,13 +279,40 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom in oklch, rgb(2 54 24 / 80%) 0%, rgb(0 0 0 /70%) 100%);
+  background-image: linear-gradient(to bottom in oklch, rgb(2 54 24 / 100%) 0%, rgb(2 54 24 / 85%) 100%);
   z-index: 1;
 }
 
 .problema-header{
   z-index: 2;
   position: relative;
+  text-align: center;
+}
+
+.problema-chip{
+  color: var(--orange);
+  text-transform: uppercase;
+  font-size: var(--xsm);
+  font-weight: 750;
+  letter-spacing: 1px;
+  background-color: color-mix(in oklab, var(--orange) 10%, transparent 100%);
+}
+
+.problema-heading{
+  color: var(--primary-text);
+  font-size: clamp(1.5625rem, 0.7708rem + 2.64vw, 2.7500rem);
+  max-width: 33ch;
+  margin-inline: auto;
+}
+
+.problema-text-accent {
+  color: var(--orange);
+}
+
+.problema-muted-text{
+  color: var(--muted-text);
+  font-size: var(--base);
+  margin-block-end: 4rem;
 }
 
 .cards-wrapper{
@@ -312,22 +338,89 @@
   border: 1px solid rgb(255 255 255 / 25%);
   background-color: rgb(255 255  255 / 10%);
   box-shadow: 0 8px 32px rgb(0 0 0 / 20%);
+  transition: background 200ms ease;
+  color: var(--primary-text);
 }
 
-.card-icon-container{
- display: inline-flex;
- align-items: center;
- justify-content: center;
- background-color: #d8d8d8;
- width: 34px;
- aspect-ratio: 1;
- border-radius: 12px;
+.card-container:hover{
+  background-color: rgb(255 255  255 / 15%);
 }
+
+.card-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d8d8d8;
+  width: 34px;
+  aspect-ratio: 1;
+  border-radius: 12px;
+
+  & svg {
+    fill: none;
+    stroke-width: 2rem;
+  }
+}
+
+ .bonfire {
+   background-color: color-mix(in oklab, var(--orange) 10%, transparent 100%);
+
+   & svg {
+     stroke: var(--orange);
+   }
+ }
+
+ .sun {
+   background-color: color-mix(in oklab, var(--skyblue) 10%, transparent 100%);
+
+   & svg {
+     stroke: var(--skyblue);
+   }
+ }
+
+  .ant {
+   background-color: color-mix(in oklab, var(--light-green) 10%, transparent 100%);
+
+   & svg {
+     stroke: var(--light-green);
+   }
+ }
+
+
+   .shovel {
+   background-color: color-mix(in oklab, var(--primary-text) 10%, transparent 100%);
+
+   & svg {
+     stroke: var(--primary-text);
+   }
+ }
 
 .card-icon-container svg{
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
+
+.stat-number{
+  color: var(--primary-text);
+  font-size: calc(var(--base) * 2);
+  font-weight: 800;
+}
+
+.cards-wrapper article:nth-child(1) > data{
+  color: var(--orange);
+}
+
+.cards-wrapper article:nth-child(2) > data{
+  color: var(--skyblue);
+}
+
+.cards-wrapper article:nth-child(3) > data{
+  color: var(--light-green);
+}
+
+.cards-wrapper article:nth-child(4) > data{
+  color: var(--primary-text);
+}
+
 
 /*==========================================
                   footer
@@ -343,6 +436,7 @@
   bottom: 5%;
   animation: float 3s ease-in-out infinite;
   contain: paint;
+  z-index: 999;
 }
 
 .floating-drone svg{
@@ -357,7 +451,8 @@
 
   #menu_hamburguesa_interruptor:checked ~ .nav-list-container {
     height: auto;
-    padding: 2rem 1.25rem;
+    padding-block: 2rem;
+    padding-inline: var(--hpadding);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -439,7 +534,7 @@
 
   .slogan-container {
     text-align: left;
-    padding-inline-start: 4rem;
+    padding-inline-start: 2rem;
   }
 
   .hero-text {
@@ -456,7 +551,7 @@
 
   .hero-img-container {
     align-self: center;
-    padding-inline-end: 4rem;
+    padding-inline-end: 2rem;
   }
 
   .hero-img-container,

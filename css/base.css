@@ -2,19 +2,20 @@
   --bg: #f0f0f2;
   --primary-text: #ffffff;
   --primary-text-dark: #212121;
-  --muted-text: rgba(255 255 255 / 80%);
+  --muted-text: rgb(255 255 255 / 60%);
   --brown: #3b2f2f;
   --orange: #f18f01;
   --orange-darker: #df8600;
   --skyblue: #3993dd;
   --green: #023618;
+  --light-green: rgb(74, 222, 128);
   --card: rgba(255, 255, 255, 0.08);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   --btn-radius: 100vmax;
   --font-family-headings: 'Plus Jakarta Sans', sans-serif, system-ui;
   --font-family-text: 'Nunito', sans-serif, system-ui;
 
-    /* Variables para el tamaño de fuente */
+  /* Variables para el tamaño de fuente */
   --xsm: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem);
   --sm: clamp(0.875rem, 0.813rem + 0.21vw, 1rem);
   --base: clamp(1rem, 1rem + 0vw, 1rem);
@@ -25,6 +26,9 @@
 
   /* Escala de unidades */
   --unit: 1px;
+
+  /* Horizontal Padding */
+  --hpadding: clamp(1.0000rem, 0.1176rem + 2.94vw, 2.0000rem);
 }
 /* ==============================================
           Fuentes Locales Google Fonts
@@ -75,6 +79,10 @@ body {
 h1{
   font-family: var(--font-family-headings);
   font-size: var(--lg);
+}
+
+h2{
+  font-family: var(--font-family-headings);
 }
 
 p{
